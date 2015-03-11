@@ -1,0 +1,35 @@
+Project\MoviesBundle\Entity\User:
+  type: entity
+  #repositoryClass: Project\MoviesBundle\Repository\UserRepository‏
+  detect_relations: true
+  table: users
+  fields:
+    id:
+      id: true
+      type: integer
+      generator:
+        strategy: AUTO
+    name:
+      type: string
+      length: 45
+      nullable: false
+    surname:
+      type: string
+      length: 45
+      nullable: false
+    email:
+      type: string
+      length: 45
+      nullable: false
+    password:
+      type: string
+      length: 45
+      nullable: false
+    #created_at: 
+      #type: string 
+    #updated_at:
+      #type: string
+      #nullable: true
+#lifecycleCallbacks:
+       #prePersist: [setCreatedAtValue]
+       #preUpdate: [setUpdatedAtValue]

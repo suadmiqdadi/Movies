@@ -1,0 +1,45 @@
+Project\MoviesBundle\Entity\Movie:
+  type: entity
+  #repositoryClass: Project\MoviesBundle\Repository\MovieRepository‏
+  detect_relations: true
+  table: movies
+  fields:
+    id:
+      id: true
+      type: integer
+      generator:
+        strategy: AUTO
+    title:
+      type: string
+      length: 45
+      nullable: false
+    description:
+      type: string
+      length: 65535
+      nullable: true
+    genre:
+      type: string
+      length: 100
+    cover:
+      type: blob
+      nullable: true
+    price:
+      type: decimal
+      nullable: false
+    actor:
+      type: string 
+      length: 100
+    release_date:
+      type: string
+      nullable: true
+    #created_at:
+       #type: string
+    #updated_at:
+       #type: string
+       #nullable: true
+  indexes:
+    genres_fk_idx:
+      columns: [genre]
+#lifecycleCallbacks:
+       #prePersist: [setCreatedAtValue]
+       #preUpdate: [setUpdatedAtValue]

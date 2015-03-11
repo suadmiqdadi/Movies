@@ -1,0 +1,30 @@
+review:
+    path:     /
+    defaults: { _controller: "ProjectMoviesBundle:Review:index" }
+
+review_show:
+    path:     /{id}/show
+    defaults: { _controller: "ProjectMoviesBundle:Review:show" }
+
+review_new:
+    path:     /new
+    defaults: { _controller: "ProjectMoviesBundle:Review:new" }
+
+review_create:
+    path:     /create
+    defaults: { _controller: "ProjectMoviesBundle:Review:create" }
+    methods:  POST
+
+review_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ProjectMoviesBundle:Review:edit" }
+
+review_update:
+    path:     /{id}/update
+    defaults: { _controller: "ProjectMoviesBundle:Review:update" }
+    methods:  [POST, PUT]
+
+review_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ProjectMoviesBundle:Review:delete" }
+    methods:  [POST, DELETE]

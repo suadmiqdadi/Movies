@@ -1,0 +1,32 @@
+{% extends "ProjectMoviesBundle::layout.html.twig" %}
+
+{% block content %}
+    <h1>Genre</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Genre</th>
+                <td>{{ entity.genre }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ entity.name }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('genre') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('genre_edit', { 'id': entity.genre }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

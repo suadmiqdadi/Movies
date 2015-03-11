@@ -1,0 +1,30 @@
+Project\MoviesBundle\Entity\Order:
+  type: entity
+  #repositoryClass: Project\MoviesBundle\Repository\OrderRepository‏
+  detect_relations: true
+  table: orders
+  fields:
+    id:
+      id: true
+      type: integer
+      generator:
+        strategy: AUTO
+    date:
+      type: date
+      nullable: false
+    duration:
+      type: integer
+      nullable: false
+    charge:
+      type: decimal
+      nullable: false
+    expires_at:
+      type: datetime
+    #created_at:
+      #type: string
+    #updated_at:
+      #type: string
+      #nullable: true
+#lifecycleCallbacks:
+       #prePersist: [setCreatedAtValue]
+       #preUpdate: [setUpdatedAtValue]

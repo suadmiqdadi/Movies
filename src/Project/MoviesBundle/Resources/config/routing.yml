@@ -1,0 +1,27 @@
+project_movies_genre:
+    resource: "@ProjectMoviesBundle/Resources/config/routing/genre.yml"
+    prefix:   /genre
+
+project_movies_review:
+    resource: "@ProjectMoviesBundle/Resources/config/routing/review.yml"
+    prefix:   /review
+
+project_movies_order:
+    resource: "@ProjectMoviesBundle/Resources/config/routing/order.yml"
+    prefix:   /order
+
+project_movies_user:
+    resource: "@ProjectMoviesBundle/Resources/config/routing/user.yml"
+    prefix:   /user
+
+project_movies_movie:
+    resource: "@ProjectMoviesBundle/Resources/config/routing/movie.yml"
+    prefix:   /movie
+
+project_movies_homepage:
+    path:     /
+    defaults: { _controller: ProjectMoviesBundle:Movie:index}
+
+project_movies_info:
+    path:    /info
+    defaults: { _controller: ProjectMoviesBundle:Info:index}

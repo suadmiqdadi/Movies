@@ -1,0 +1,45 @@
+{% extends "ProjectMoviesBundle::layout.html.twig" %}
+
+{% block content %}
+    <h1>Review list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Movie_id</th>
+                <th>Text</th>
+                <th>Author</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('review_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.movieid }}</td>
+                <td>{{ entity.text }}</td>
+                <td>{{ entity.author }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('review_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('review_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('review_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

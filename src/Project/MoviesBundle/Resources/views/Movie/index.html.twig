@@ -1,0 +1,63 @@
+{% extends "ProjectMoviesBundle::layout.html.twig" %}
+
+{% block content %}
+	<div class="new_movies">
+	<h3>New movies</h3>
+    <table class="records_list">
+      <!--  <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Genre</th>
+                <th>Cover</th>
+                <th>Price</th>
+                <th>Actor</th>
+                <th>Release_date</th>
+                <th>Actions</th>
+            </tr>
+        </thead> -->
+       <!--body>-->
+	   
+		{% for entity in entities %}
+			<td>
+				<a href="{{ path('movie_show', { 'id': entity.id, 'title': entity.title }) }}">{{ entity.cover }} <br>{{ entity.title }}<br>{{ entity.genre }}<br></a>
+			</td>
+        {% endfor %}
+        <!--body-->
+    </table>
+	</div>
+	<br>
+	
+	<div class="popular">
+	<h3>Popular</h3>
+	<table class="records_list">
+	{% for entity in entities %}
+			<td>
+				<a href="{{ path('movie_show', { 'id': entity.id, 'title': entity.title }) }}">{{ entity.cover }} <br>{{ entity.title }}<br>{{ entity.genre }}<br></a>
+			</td>
+			{% endfor %}
+			</table>
+	 </div>
+	 <br>
+	 
+	 <div class="all_movies">
+	 <h3>All movies</h3>
+	<table class="records_list">
+	{% for entity in entities %}
+			<td>
+				<a href="{{ path('movie_show', { 'id': entity.id, 'title': entity.title }) }}">{{ entity.cover }} <br>{{ entity.title }}<br>{{ entity.genre }}<br></a>
+			</td>
+			{% endfor %}
+			</table>
+	 </div>
+	 <br>
+        <ul>
+        <li>
+            <a href="{{ path('movie_new') }}">
+                Add new movie
+            </a>
+        </li>
+    </ul>
+	
+    {% endblock %}

@@ -1,0 +1,64 @@
+{% extends "ProjectMoviesBundle::layout.html.twig" %}
+
+{% block content %}
+    <h1>Movie</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ entity.title }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ entity.description }}</td>
+            </tr>
+            <tr>
+                <th>Genre</th>
+                <td>{{ entity.genre }}</td>
+            </tr>
+            <tr>
+                <th>Cover</th>
+                <td>{{ entity.cover }}</td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>{{ entity.price }}</td>
+            </tr>
+            <tr>
+                <th>Actor</th>
+                <td>{{ entity.actor }}</td>
+            </tr>
+            <tr>
+                <th>Release_date</th>
+                <td>{{ entity.releasedate }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li class="list-unstyled">
+        <a href="{{ path('movie') }}">
+            Back to the list
+        </a>
+    </li>
+    <li class="list-unstyled">
+        <a href="{{ path('movie_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li class="list-unstyled">{{ form(delete_form) }}</li>
+</ul>
+<a href="{{ path('order_new') }}">
+<button type="submit">Borrow</button>
+</a>
+<a href="{{ path('review_new') }}">
+<button type="submit">Leave a feedback</button>
+</a>
+<br><br>
+{% endblock %}
+

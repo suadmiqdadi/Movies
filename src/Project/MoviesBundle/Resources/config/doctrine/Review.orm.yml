@@ -1,0 +1,35 @@
+Project\MoviesBundle\Entity\Review:
+  type: entity
+  #repositoryClass: Project\MoviesBundle\Repository\ReviewRepository‏
+  detect_relations: true
+  table: reviews
+  fields:
+    id:
+      id: true
+      type: integer
+      generator:
+        strategy: AUTO
+    movie_id:
+      type: integer
+    text:
+      type: string
+      length: 65535
+      nullable: false
+    author:
+      type: string
+      length: 45
+      nullable: false
+    #date:
+      #type: date
+      #nullable: true
+    #created_at:
+      #type: string
+    #updated_at:
+      #type: string
+      #nullable: true
+  indexes:
+    movies_id_fk_idx:
+      columns: [movie_id]
+#lifecycleCallbacks:
+       #prePersist: [setCreatedAtValue]
+       #preUpdate: [setUpdatedAtValue]

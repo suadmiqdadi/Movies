@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>DVD Planet</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="{{ asset('bootstrap/css/bootstrap.css')}}">
+	</head>
+	<body>
+	<div class="container">
+			<header class="row">
+				{% block header %}
+				<div id="header" class="page-header"> <!--шапка-->
+				<div class="row">
+				<div class="col-lg-6">
+                <div class="row">
+                    <div class="col-lg-4"><a id="logo" href="{{ path('project_movies_homepage') }}">
+                        <h2 id="logo">DVD Planet</h2>
+						</a>
+                    </div>
+                    <div class="col-lg-6">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <div class="col-lg-2">
+                        <button class="btn btn-default">Search</button>
+                    </div>
+                </div>
+				</div>
+				
+				<div id="menu">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="{{ path('project_movies_homepage') }}">Home</a></li>
+				<li><a href="#">My Profile</a></li>
+				<li><a href="#">Log In</a></li>
+				<li><a href="{{ path('user_new') }}">Register</a></li>
+				<li><a href="#">Info</a></li>
+			</ul>
+			</div> 
+			
+			{% endblock %}
+			</div>
+			</div>
+			</header>
+			
+			
+		<div class="row">	
+		<div class="col-md-2">
+				{% block sidebar %}
+				<p><mark>Categories</mark></p>
+				<ul class="list-unstyled">
+				<li><a href="/action/"></a>Action</li>
+				<li><a href="/adventure/"></a>Adventure</li>
+				<li><a href="/animation/"></a>Animation</li>
+				<li><a href="/biography/"></a>Biography</li>
+				<li><a href="/comedy/"></a>Comedy</li>
+				<li><a href="/crime/"></a>Crime</li>
+				<li><a href="/drama/"></a>Drama</li>
+				<li><a href="/fantasy/"></a>Fantasy</li>
+				<li><a href="/history/"></a>History</li>
+				<li><a href="/horror/"></a>Horror</li>
+				<li><a href="/music/"></a>Music</li>
+				<li><a href="/mystery/"></a>Mystery</li>
+				<li><a href="/scifi/"></a>Sci-Fi</li>
+				<li><a href="/sport/"></a>Sport</li>
+				<li><a href="/thriller/"></a>Thriller</li>
+				<li><a href="/western/"></a>Western</li>
+				</ul>
+				{% endblock %}
+		</div>
+		<div class="col-md-8">
+				{% block content %}
+				{% endblock %}
+		</div>
+		</div>
+		
+		<footer class="row">
+		<p>© Suad Miqdadi, Tetiana Bondarenko, KrDZIa3012, Applied Informatics, 2015</p>
+		</footer>
+		</div>
+	</body>
+</html>
+
